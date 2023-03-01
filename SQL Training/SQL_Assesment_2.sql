@@ -42,10 +42,10 @@
 	
 --1d)
 	SELECT 
-	CONVERT(nvarchar, Duedate, 13) as duedate,
-	CONVERT(nvarchar, closedat, 13) as closedat,
-	CONVERT(nvarchar, lastupdatedat, 13) as lastupdatedat,
-	CONVERT(nvarchar, createdat, 13) as createdat
+	substring(CONVERT(nvarchar, Duedate, 113),1,(len(CONVERT(nvarchar, Duedate, 113))-4)) as duedate,
+	substring(CONVERT(nvarchar, closedat, 13),1,(len(CONVERT(nvarchar, closedat, 13))-4)) as closedat,
+	substring(CONVERT(nvarchar, lastupdatedat, 13),1,(len(CONVERT(nvarchar, lastupdatedat, 13))-4)) as lastupdatedat,
+	substring(CONVERT(nvarchar, createdat, 13),1,(len(CONVERT(nvarchar, createdat, 13))-4)) as createdat
 	FROM data
 
 --1e)
